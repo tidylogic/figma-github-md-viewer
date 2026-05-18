@@ -1,0 +1,34 @@
+{
+  "name": "figma-github-md-viewer",
+  "version": "1.0.0",
+  "description": "Figma plugin that shows PRD markdown from a private GitHub repo next to your designs.",
+  "private": true,
+  "scripts": {
+    "build": "build-figma-plugin --typecheck --minify",
+    "watch": "build-figma-plugin --typecheck --watch"
+  },
+  "dependencies": {
+    "@create-figma-plugin/ui": "^3.2.1",
+    "@create-figma-plugin/utilities": "^3.2.1",
+    "dompurify": "^3.1.6",
+    "marked": "^12.0.2",
+    "preact": "^10.22.1"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "^3.2.1",
+    "@figma/plugin-typings": "^1.100.2",
+    "@types/dompurify": "^3.0.5",
+    "typescript": "^5.5.4"
+  },
+  "figma-plugin": {
+    "editorType": ["figma", "dev"],
+    "id": "github-prd-md-viewer",
+    "name": "GitHub PRD Viewer",
+    "main": "src/main.ts",
+    "ui": "src/ui.tsx",
+    "networkAccess": {
+      "allowedDomains": ["https://api.github.com"],
+      "reasoning": "GitHub Contents API에서 private repo의 PRD markdown과 이미지를 가져옵니다."
+    }
+  }
+}
