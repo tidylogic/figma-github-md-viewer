@@ -24,9 +24,29 @@ npm run watch     # 변경 감지 빌드
 
 ## Figma에 설치
 
+### 일반 사용자 (빌드 불필요)
+
+1. [Releases](https://github.com/tidylogic/figma-github-md-viewer/releases)에서
+   최신 `figma-github-md-viewer-vX.Y.Z.zip` 다운로드 후 압축 해제
+2. Figma 데스크톱 앱 → `Plugins → Development → Import plugin from manifest…`
+3. 압축 푼 폴더의 `manifest.json` 선택
+
+### 개발자 (소스에서)
+
 1. `npm run build` 실행
 2. Figma 데스크톱 앱 → `Plugins → Development → Import plugin from manifest…`
 3. 이 폴더의 `manifest.json` 선택
+
+## 새 버전 릴리스
+
+```bash
+npm version minor      # package.json 버전 올리고 커밋 (patch/minor/major)
+npm run release        # 빌드 -> zip -> 태그 -> GitHub 릴리스 생성
+```
+
+`npm run release`(`scripts/release.sh`)는 작업 트리가 깨끗한지 확인하고,
+빌드 산출물을 zip으로 묶어 해당 태그의 GitHub Release에 첨부합니다.
+`gh` CLI 로그인이 필요합니다.
 
 ## 사용법
 

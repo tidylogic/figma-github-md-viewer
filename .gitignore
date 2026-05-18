@@ -2,4 +2,5 @@ node_modules/
 build/
 manifest.json
 *.log
+*.zip
 .DS_Store
