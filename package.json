@@ -1,6 +1,6 @@
 {
   "name": "figma-github-md-viewer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Figma plugin that shows PRD markdown from a private GitHub repo next to your designs.",
   "private": true,
   "scripts": {
